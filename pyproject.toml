@@ -7,9 +7,17 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^7.1.2"
+SQLAlchemy = "^1.4.39"
 
 [tool.poetry.dev-dependencies]
+black = {version = "^22.6.0", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+test = "pytest --tb=short"
+watch-tests = "ls *.py | entr pytest --tb=short"
+black = "black -l 86 $$(find * -name '*.py')"

@@ -1,6 +1,8 @@
 # Practice DDD on python
 
-How to write test code more easily
+> How to TDD more easily
+
+[Develop environment base link](https://gist.github.com/1eedaegon/cc23648cd2f92331c3f748be9cac4f03)
 
 ## Todos
 
