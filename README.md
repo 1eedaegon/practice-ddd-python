@@ -18,4 +18,5 @@
 - [ ] Dependency injection
 
 ## Ref
-[Architecture patterns with python](https://www.amazon.com/Architecture-Patterns-Python-Domain-Driven-Microservices/dp/1492052205)
+- [Architecture patterns with python](https://www.amazon.com/Architecture-Patterns-Python-Domain-Driven-Microservices/dp/1492052205)
+- [Cosmic python](https://www.cosmicpython.com/)
