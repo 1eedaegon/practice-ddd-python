@@ -50,7 +50,7 @@ make test
 고객(Customer)는 주문(Order)을 넣는다.
 주문은 주문참조번호(Order reference number)로 구분하고 주문라인(Order line)을 포함한다.
 
-각 주문라인에는 SKU와 수량(Amount)이 있다.
+각 주문라인에는 SKU와 수량(Quantity)이 있다.
 > RED-CHARE 10단위
 > STAINLESS-POT 2단위 
 
