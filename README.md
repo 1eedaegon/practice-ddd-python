@@ -4,6 +4,28 @@
 
 [Develop environment base link](https://gist.github.com/1eedaegon/cc23648cd2f92331c3f748be9cac4f03)
 
+## Project install
+```sh
+make install
+```
+
+## Project teardown
+```sh
+make clean
+```
+## Formatting and linting
+```sh
+make lint
+make format
+```
+
+## Running the tests
+```sh
+# Unit tests
+make unit-test
+# Integration test
+make test
+```
 ## Todos
 
 - [ ] Domain modeling
