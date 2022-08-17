@@ -34,3 +34,10 @@ def test_cannot_allocate_if_skus_do_not_match():
     batch = Batch("batch-002", "UNCOMFORTABLE-SOPA", 10, eta=None)
     different_sku_line = OrderLine("order-002", "EXPENSIVE-DESK", 10)
     assert batch.can_allocate(different_sku_line) is False
+
+
+# 배치에 할당하지 않은 주문라인을 할당해제하면 아무일도 없어야 한다.
+def test_can_only_deallocate_allocated_lines():
+    batch, unallocated_line = make_batch_and_line("DECORATED-TRINKET", 20, 2)
+    batch.deallocate(unallocated_line)
+    assert batch.available_quantity == 20
