@@ -28,21 +28,24 @@ make test
 ```
 ## Todos
 
-- [ ] Domain modeling
-- [ ] Repository pattern
-- [ ] Abstractions
-- [ ] Usecase: service layer
-- [ ] TDD
-- [ ] Unit of work
-- [ ] Aggregate & consistency boundary
-- [ ] Event driven
-- [ ] Integrate microservices
-- [ ] Dependency injection
+- [x] [Domain modeling](https://github.com/1eedaegon/practice-ddd-python#domain-modeling)
+- [ ] [Repository pattern](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Abstractions](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Usecase: service layer](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [TDD](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Unit of work](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Aggregate & consistency boundary](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Event driven](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Integrate microservices](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [Dependency injection](https://github.com/1eedaegon/practice-ddd-python)
 
 ## Domain modeling
 도메인 모델링 파트
-> 비즈니스 관계자의 경험을 통해 도메인 모델을 도출하고 규칙을 도출한다. 초기에는 최대한 사례를 중심으로 도출해낸다. 그리고 도메인 모델을 다시 비즈니스 관계자에게 설명할 수 있어야한다.
-> DDD에선 유비쿼터스 언어라고 한다.
+> 비즈니스 관계자의 경험과 생각을 통해 도메인 모델과 규칙을 도출한다. 
+> 초기에는 최대한 사례와 예시를 중심으로 비즈니스 전문가에게 이야기를 부탁해야한다. 
+> 비즈니스 관계자의 이야기를 통해 도출한 도메인 모델은 다시 비즈니스 관계자에게 설명하고 이해가 가능해야한다.
+> 이걸 DDD에선 유비쿼터스 언어라고 한다.
+> (포스트잇이 제법 필요해보인다 ㅋㅋ...)
 
 ### Example notes
 ```
