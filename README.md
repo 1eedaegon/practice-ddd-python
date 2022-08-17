@@ -46,9 +46,9 @@ make test
 
 ### Example notes
 ```
-제품(Product)은 SKU(Stock keeping unit)로 식별된다.
+제품(Product)은 SKU(Stock keeping unit)로 구분한다.
 고객(Customer)는 주문(Order)을 넣는다.
-주문은 주문참조번호(Order reference number)로 식별되며 주문라인(Order line)을 포함한다.
+주문은 주문참조번호(Order reference number)로 구분하고 주문라인(Order line)을 포함한다.
 
 각 주문라인에는 SKU와 수량(Amount)이 있다.
 > RED-CHARE 10단위
@@ -73,7 +73,7 @@ make test
 > 10단위 BLUE-VASE 배치가 있다.
 > 2단위 BLUE-VASE 주문라인이 있다.
 > 10단위 BLUE-VASE 배치에 2단위 주문라인을 할당해야한다.
-> 2단위 주문라인을 한번 더 할당하더라도 배치의 가용재고수량은 8단위가 되어야한다.
+> 2단위 주문라인을 한번 더 할당하더라도 배치의 가용재고수량은 8단위여야한다.
 
 배치가 현재 배송 중이면 ETA정보가 배치에 들어있다.
 ETA가 없는 배치는 창고에 있는 배치이다.
