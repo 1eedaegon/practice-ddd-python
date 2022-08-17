@@ -61,4 +61,5 @@ ETA가 없는 배치는 창고에 있는 배치이다.
 ```
 
 ## Ref
-[Architecture patterns with python](https://www.amazon.com/Architecture-Patterns-Python-Domain-Driven-Microservices/dp/1492052205)
+- [Architecture patterns with python](https://www.amazon.com/Architecture-Patterns-Python-Domain-Driven-Microservices/dp/1492052205)
+- [Cosmic python](https://www.cosmicpython.com/)
