@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import date
 from typing import List, Optional
 
+
 # dataclass: 아래와 같은 class의 boilerplate
 # 값 객체의 연산을 쉽게 생성할 수 있다.
 # class User:
@@ -13,6 +14,8 @@ from typing import List, Optional
 #         pass
 #     def __eq__(self, __o: object) -> bool:
 #         pass
+
+
 # 값 객체 연산이 뭐나면:
 # assert User('leedaegon', 31) == User('leedaegon', 31)
 # assert Money('won', 50000) == Money('won', 50000)
@@ -55,7 +58,7 @@ class Batch:
         return self._purchased_quantity - self.allocated_quantity
 
     def can_allocate(self, line: OrderLine):
-        return self.sku == line.sku and self._purchased_quantity >= line.qty
+        return self.sku == line.sku and self.available_quantity >= line.qty
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Batch):
@@ -86,6 +89,6 @@ def allocate(line: OrderLine, batches: List[Batch]) -> str:
     try:
         batch = next(b for b in sorted(batches) if b.can_allocate(line))
         batch.allocate(line)
+        return batch.reference
     except StopIteration:
         raise OutOfStock(f"Out of stock for sku {line.sku}")
-    return batch.reference
