@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 
+import pytest
 from src.model import Batch, OrderLine, OutOfStock, allocate
 
 today = date.today()
@@ -46,7 +47,8 @@ def test_returns_allocated_batch_ref():
 
 # 주문라인을 할당할 수 있는 배치가 없을 때(품절), 주문라인을 할당할 수 없다.
 def test_raises_out_of_stock_exception_if_cannot_allocate():
-    batch = Batch("batch-010", "SMALL-BEEF", 100, eta=today)
+    batch = Batch("batch-010", "SMALL-BEEF", 10, eta=today)
     allocate(OrderLine("order-ref-010", "SMALL-BEEF", 10), [batch])
     with pytest.raises(OutOfStock, match="SMALL-BEEF"):
+        print(batch._allocations, batch._purchased_quantity)
         allocate(OrderLine("order2", "SMALL-BEEF", 1), [batch])

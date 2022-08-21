@@ -5,7 +5,10 @@ from src.model import Batch, OrderLine
 
 # 테스트 배치를 만든다.
 def make_batch_and_line(sku, batch_qty, line_qty):
-    return (Batch("batch-000", sku, batch_qty, eta=date.today()), OrderLine("order-000", sku, line_qty))
+    return (
+        Batch("batch-000", sku, batch_qty, eta=date.today()),
+        OrderLine("order-000", sku, line_qty),
+    )
 
 
 # 주문라인을 배치에 할당하면 x단위만큼 가용재고 수량이 줄어든다.
