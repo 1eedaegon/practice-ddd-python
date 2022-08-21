@@ -5,6 +5,7 @@ description = ""
 authors = ["1eedaegon <d8726243@gmail.com>"]
 license = "MIT"
 
+
 [tool.poetry.dependencies]
 python = "^3.9"
 pytest = "^7.1.2"

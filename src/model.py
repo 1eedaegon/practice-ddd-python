@@ -73,12 +73,19 @@ class Batch:
         return self.eta > other.eta
 
 
-# 도메인 서비스는 값객체나 엔티티로 표현할 수 없을 때가 있다.
+class OutOfStock(Exception):
+    pass
+
+
+# 도메인 서비스는 값객체나 엔티티로만 표현하기 어려울 수 있다.
 # > 주어진 배치집합에 주문라인을 할당한다.
 # 위 문구에 해당하는도메인 서비스 함수를 만들어 준다.
 def allocate(line: OrderLine, batches: List[Batch]) -> str:
     # 아래 Iterator의 sorted를 사용하려면
     # 비교 연산(__gt__)을 도메인 모델이 구현해야한다.
-    batch = next(b for b in sorted(batches) if b.can_allocate(line))
-    batch.allocate(line)
+    try:
+        batch = next(b for b in sorted(batches) if b.can_allocate(line))
+        batch.allocate(line)
+    except StopIteration:
+        raise OutOfStock(f"Out of stock for sku {line.sku}")
     return batch.reference
