@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from datetime import date
 from typing import List, Optional
 
-
 # dataclass: 아래와 같은 class의 boilerplate
 # 값 객체의 연산을 쉽게 생성할 수 있다.
 # class User:
@@ -23,7 +22,7 @@ from typing import List, Optional
 # *객체가 값이라는 뜻이 절대 아님
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class OrderLine:
     orderid: str
     sku: str

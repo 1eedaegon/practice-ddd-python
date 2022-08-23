@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Date, ForeignKey, Integer, MetaData, String, Table
 from sqlalchemy.orm import mapper, relationship
 
-import model
+from src import model
 
 # ORM은 도메인을 import하고 도메인은 ORM을 import 하지 않는다.
 # ORM에 의존적인 도메인을 역전시켜 ORM이 도메인을 의존하게 만들고 (IoC)
