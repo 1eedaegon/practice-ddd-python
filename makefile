@@ -1,7 +1,7 @@
 NAME := ./src/
 TEST := ./tests/
 INSTALL_STAMP := .install.stamp
-POETRY := $(shell command -v poetry 2> /dev/null)
+POETRY := poetry
 
 .DEFAULT_GOAL := help
 
