@@ -29,7 +29,7 @@ make test
 ## Todos
 
 - [x] [Domain modeling](https://github.com/1eedaegon/practice-ddd-python#domain-modeling)
-- [ ] [Repository pattern](https://github.com/1eedaegon/practice-ddd-python)
+- [x] [Repository pattern](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [Abstractions](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [Usecase: service layer](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [TDD](https://github.com/1eedaegon/practice-ddd-python)
