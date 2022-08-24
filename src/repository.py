@@ -7,7 +7,7 @@ from src import model
 # 이런 가정은 복잡한 내부 구현을 추상화하고
 # 도메인 모델이 데이터베이스에 의존하는 관계를 끊어줄 수 있다.
 
-
+# 자주 쓰는 상속구현 강제(factory pattern)
 class AbstractRepository(abc.ABC):
     @abc.abstractmethod
     def add(self, batch: model.Batch):
