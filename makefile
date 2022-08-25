@@ -19,6 +19,7 @@ help:
 	@echo "  lint        run the code linters"
 	@echo "  format      reformat code"
 	@echo "  test        run all the tests"
+	@echo "  unit-test 	 run all unit-tests"
 	@echo ""
 	@echo "Check the Makefile to know exactly what each target is doing."
 
