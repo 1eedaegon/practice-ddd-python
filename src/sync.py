@@ -28,7 +28,7 @@ def sync(origin, copy):
     for folder, _, files in os.walk(origin):
         for fn in files:
             # 하위폴더 밑의 파일을 해시로 만들고 dictionary 등록
-            origin_hashes[hash_file(Path(folder) / fn)]
+            origin_hashes[hash_file(Path(folder) / fn)] = fn
 
     seen = set()  # 사본 추적
 
