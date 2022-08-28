@@ -32,7 +32,7 @@ make test
 - [x] [Repository pattern](https://github.com/1eedaegon/practice-ddd-python)
 - [x] [Abstractions](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [Usecase: service layer](https://github.com/1eedaegon/practice-ddd-python)
-- [ ] [TDD](https://github.com/1eedaegon/practice-ddd-python)
+- [ ] [TDD: High/Low gear ratio](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [Unit of work](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [Aggregate & consistency boundary](https://github.com/1eedaegon/practice-ddd-python)
 - [ ] [Event driven](https://github.com/1eedaegon/practice-ddd-python)
