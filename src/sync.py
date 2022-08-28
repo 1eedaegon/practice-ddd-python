@@ -48,18 +48,43 @@ def determine_actions(src_hashes, dst_hashes, src_folder, dst_folder):
             yield "delete", dst_folder / filename
 
 
+# #3 - Edge to Edge test: need fake filesystem
+# 하나의 함수에서 unit-test, e2e-test를 모두 충족하자.
+# Edge to Edge test
+# Using fake and DI
+# reader와 filesystem의 의존성이 있다고 알려준다.
+# def sync(reader, filesystem, src_root, dst_root):
+#     src_hashes = reader(src_root)
+#     dst_hashes = reader(dst_root)
+
+#     for sha, filename in src_hashes.items():
+#         if sha not in dst_hashes:
+#             src_path = src_root / filename
+#             dst_path = dst_root / filename
+#             filesystem.copy(dst_path, src_path)
+
+#         elif dst_hashes[sha] != filename:
+#             old_dst_path = dst_root / dst_hashes[sha]
+#             new_dst_path = dst_root / filename
+#             filesystem.move(old_dst_path, new_dst_path)
+
+#     for sha, filename in dst_hashes.items():
+#         if sha not in src_hashes:
+#             filesystem.delete(dst_root / filename)
+
+# #2 - functinal core, imperative shell
 # 외부 상태의 의존이 없는 순수 비즈니스 로직 코어를 만든다.
 # 외부 세계 표현의 입력을 받는 로직을 분리한다.
 # 리팩토링 후엔 아래 복잡한 sync코드와 비교해서
 # 실제 파일 시스템없이도 테스트가 가능해졌다.
 # Functional core, Imperative shell
-def sync(origin_root, copy_root):
+def sync(origin, copy):
     # Path and Hash collect(Imperative shell #1)
-    origin_hashes = read_paths_and_hashes(origin_root)
-    copy_hashes = read_paths_and_hashes(copy_root)
+    origin_hashes = read_paths_and_hashes(origin)
+    copy_hashes = read_paths_and_hashes(copy)
 
     # functional core(Imperative shell #2)
-    actions = determine_actions(origin_hashes, copy_hashes, origin_root, copy_root)
+    actions = determine_actions(origin_hashes, copy_hashes, origin, copy)
 
     # Print out(Imperative shell #3)
     for action, *paths in actions:
@@ -71,6 +96,7 @@ def sync(origin_root, copy_root):
             os.remove(paths[0])
 
 
+# #1 - dirty magic
 # def sync(origin, copy):
 #     origin_hashes = {}
 #     # source 하위 폴더, 파일 탐색
