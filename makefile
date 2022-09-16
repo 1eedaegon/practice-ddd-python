@@ -15,6 +15,7 @@ help:
 	@echo "Please use 'make <target>' where <target> is one of"
 	@echo ""
 	@echo "  install     install packages and prepare environment"
+	@echo "  (deprecated) add <package>      now use: poetry add <package> "    @echo "  (deprecated) add-dev <package>  now use: poetry add -D <package> "
 	@echo "  clean       remove all temporary files"
 	@echo "  lint        run the code linters"
 	@echo "  format      reformat code"
