@@ -1,6 +1,6 @@
+import time
 from pathlib import Path
 from sqlite3 import OperationalError
-from time import time
 
 import pytest
 import requests
@@ -92,6 +92,7 @@ def add_stock(postgres_session):
 
 @pytest.fixture
 def restart_api():
-    (Path(__file__).parent / "flask_app_py").touch()
+    print(Path(__file__).parent / "src/flask_app.py")
+    (Path(__file__).parent / "src/flask_app.py").touch()
     time.sleep(0.5)
     wait_for_webapp_to_come_up()
