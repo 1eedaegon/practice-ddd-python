@@ -14,13 +14,15 @@ POETRY := poetry
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
 	@echo ""
-	@echo "  install     install packages and prepare environment"
-	@echo "  (deprecated) add <package>      now use: poetry add <package> "    @echo "  (deprecated) add-dev <package>  now use: poetry add -D <package> "
-	@echo "  clean       remove all temporary files"
-	@echo "  lint        run the code linters"
-	@echo "  format      reformat code"
-	@echo "  test        run all the tests"
-	@echo "  unit-test 	 run all unit-tests"
+	@echo "  install            install packages and prepare environment"
+	@echo "  (deprecated)       add <package>      now use: poetry add <package> "    
+	@echo "  (deprecated)       add-dev <package>  now use: poetry add -D <package> "
+	@echo "  clean              remove all temporary files"
+	@echo "  lint               run the code linters"
+	@echo "  format             reformat code"
+	@echo "  test               run all the tests"
+	@echo "  unit-test 	        run all unit-tests"
+	@echo "  export-lib         export poetry.lock -> requirements.txt"
 	@echo ""
 	@echo "Check the Makefile to know exactly what each target is doing."
 
@@ -52,3 +54,7 @@ unit-test: $(INSTALL_STAMP)
 .PHONY: test
 test: $(INSTALL_STAMP)
 	$(POETRY) run python -m pytest $(TEST) --cov-report term-missing --cov-fail-under 100 --cov $(NAME)
+
+.PHONY: export-lib
+export-lib: 
+	$(POETRY) export -f requirements.txt --output requirements.txt
