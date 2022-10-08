@@ -1,9 +1,9 @@
-import config
-from allocation.adapters import orm, repository
-from allocation.domain import model
 from flask import Flask, jsonify, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from src.allocation import config
+from src.allocation.adapters import orm, repository
+from src.allocation.domain import model
 
 orm.start_mappers()
 get_session = sessionmaker(bind=create_engine(config.get_postgres_uri()))

@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Date, ForeignKey, Integer, MetaData, String, Table
 from sqlalchemy.orm import mapper, relationship
-from src import model
+from src.allocation.domain import model
 
 # ORM은 객체-관계 매핑을 통해 저장하는 방식이 어떤 것인지 모르게 만든다.(영속성 무지)
 # 데이터 저장이 추상화되면 도메인이 의존하지 않도록 유도할 수 있다.

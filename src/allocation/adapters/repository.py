@@ -1,6 +1,6 @@
 import abc
 
-from src import model
+from src.allocation.domain import model
 
 # 무한정 저장 가능한 메모리가 있다고 가정하면 우리는 데이터베이스를 사용할 필요가 없다.
 # 따라서 save()를 사용하지 않고 추가하거나 가져오기만 하면 된다.

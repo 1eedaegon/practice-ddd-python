@@ -6,9 +6,8 @@ import pytest
 import requests
 from sqlalchemy import create_engine
 from sqlalchemy.orm import clear_mappers, sessionmaker
-
-import config
-from src.orm import metadata, start_mappers
+from src.allocation import config
+from src.allocation.adapters.orm import metadata, start_mappers
 
 
 @pytest.fixture
@@ -92,7 +91,7 @@ def add_stock(postgres_session):
 
 @pytest.fixture
 def restart_api():
-    print("restart_api", Path(__file__).parent / "src/flask_app.py")
-    (Path(__file__).parent / "src/flask_app.py").touch()
+    print("restart_api", Path(__file__).parent / "../src/allocation/entrypoints/flask_app.py")
+    (Path(__file__).parent / "../src/allocation/entrypoints/flask_app.py").touch()
     time.sleep(0.5)
     wait_for_webapp_to_come_up()

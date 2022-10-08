@@ -3,9 +3,9 @@
 # 우선 프로젝트에 테스트 도입을 위해 너무 엄격하지 않게 느린테스트와 빠른테스트로 구분한다.
 import uuid
 
-import config
 import pytest
 import requests
+from src.allocation import config
 
 
 def random_suffix():

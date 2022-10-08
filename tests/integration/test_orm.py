@@ -1,4 +1,4 @@
-from src import model
+from src.allocation.domain import model
 
 
 # ORM mapper를 테스트한다.

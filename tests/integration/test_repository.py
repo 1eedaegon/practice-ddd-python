@@ -1,4 +1,5 @@
-from src import model, repository
+from src.allocation.adapters import repository
+from src.allocation.domain import model
 
 
 # 레파지토리는 Batch를 올바르게 저장해야한다.

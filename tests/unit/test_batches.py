@@ -1,6 +1,6 @@
 from datetime import date
 
-from src.model import Batch, OrderLine
+from src.allocation.domain.model import Batch, OrderLine
 
 
 # 테스트 배치를 만든다.
