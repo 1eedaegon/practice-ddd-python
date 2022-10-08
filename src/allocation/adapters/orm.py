@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Date, ForeignKey, Integer, MetaData, String, Table
 from sqlalchemy.orm import mapper, relationship
-
 from src import model
 
 # ORM은 객체-관계 매핑을 통해 저장하는 방식이 어떤 것인지 모르게 만든다.(영속성 무지)
