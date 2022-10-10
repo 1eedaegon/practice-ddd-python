@@ -2,6 +2,7 @@ NAME := ./src/
 TEST := ./tests/
 INSTALL_STAMP := .install.stamp
 POETRY := poetry
+DOCKER := docker
 
 .DEFAULT_GOAL := help
 
@@ -58,3 +59,5 @@ test: $(INSTALL_STAMP)
 .PHONY: export-lib
 export-lib: 
 	$(POETRY) export -f requirements.txt --output requirements.txt
+
+
